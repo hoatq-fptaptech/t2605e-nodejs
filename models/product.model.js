@@ -14,7 +14,7 @@ const productSchema = new mongoose.Schema({
     // }, 
     price: {
         type: Number,
-        required: true,
+        required: [true,"Nhập cái giá tiền vào!"],
         min:0
     },
     thumbnail: String,

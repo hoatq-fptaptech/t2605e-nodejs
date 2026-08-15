@@ -1,4 +1,3 @@
-const { type } = require("express/lib/response");
 const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema({
@@ -23,6 +22,11 @@ const productSchema = new mongoose.Schema({
         type: Number,
         required: true,
         min:0
+    },
+    category: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Category",
+        required: true
     }
 })
 module.exports = mongoose.model("Product",productSchema);

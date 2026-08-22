@@ -15,5 +15,8 @@ app.use(express.static("public"));
 
 const router = require("./routes/router");
 app.use("/api",router);
-
+// tạo trang chủ trả về giao diện reactjs
+app.get("/",(req,res)=>{
+    res.sendFile(__dirname+"/public/index.html");
+})
 module.exports = app;

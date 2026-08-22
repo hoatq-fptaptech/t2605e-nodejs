@@ -10,6 +10,8 @@ app.use(cors({
 );
 // thêm cấu hình nhận dữ liệu
 app.use(express.json());
+//public file
+app.use(express.static("public"));
 
 const router = require("./routes/router");
 app.use("/api",router);
